@@ -1,0 +1,42 @@
+<CalculatorLayout>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    # Input for first number
+    BoxLayout:
+        Label:
+            text: "Enter first number:"
+        TextInput:
+            id: num1
+            multiline: False
+            input_filter: 'float'
+
+    # Input for second number
+    BoxLayout:
+        Label:
+            text: "Enter second number:"
+        TextInput:
+            id: num2
+            multiline: False
+            input_filter: 'float'
+
+    # Spinner for selecting operation
+    BoxLayout:
+        Label:
+            text: "Select operation:"
+        Spinner:
+            id: operation_spinner
+            text: 'Addition'
+            values: ['Addition', 'Subtraction', 'Multiplication', 'Division']
+
+    # Calculate button
+    Button:
+        text: "Calculate"
+        on_press: root.calculate()
+
+    # Result label
+    Label:
+        id: result_label
+        text: "Result:"
+        font_size: 20
